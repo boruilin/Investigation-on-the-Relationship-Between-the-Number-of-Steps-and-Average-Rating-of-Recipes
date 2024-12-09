@@ -100,7 +100,7 @@ The first dataset, recipe, contains 83782 rows, representing 83872 unique recipe
 
 ## Data Cleaning and Exploratory Data Analysis
 <iframe
-  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/%23_year_dist_plot.html"
+  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/years_dist_plot.html"
   width="800"
   height="600"
   frameborder="0"
