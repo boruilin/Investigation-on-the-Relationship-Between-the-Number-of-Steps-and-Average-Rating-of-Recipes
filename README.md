@@ -92,8 +92,19 @@ The first dataset, recipe, contains 83782 rows, representing 83872 unique recipe
             </tr>
         </tbody>
     </table>
+
+
+
 </body>
 </html>
+
+## Data Cleaning and Exploratory Data Analysis
+<iframe
+  src="graphs/#_year_dist_plot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 
