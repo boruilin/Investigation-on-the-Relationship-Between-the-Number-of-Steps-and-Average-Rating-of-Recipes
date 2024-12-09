@@ -111,12 +111,11 @@ The column we selected to assess missing dependencies is the ‘ratings’. Some
 #### Does the missingness of ‘ratings” depend on the “n_steps” column?
 We decided to use KS stats as test statistics here, since n_steps is a numeric variable that contains a few outliers. Therefore, it is more appropriate to look at the difference in distributions rather than just the difference in means.
 
-### **Null**:: The missingness of ratings does not depend on the proportion of number of steps for a recipe
+#### **Null**: The missingness of ratings does not depend on the proportion of number of steps for a recipe
 
-### **Alternative**: The missingness of ratings does depend on the proportion of number of steps for a recipe
+#### **Alternative**: The missingness of ratings does depend on the proportion of number of steps for a recipe
 
-### **Test Statistic**: KS statistic for the group of n_steps for rows with missing ratings and group of n_steps for rows with non-missing ratings
-
+#### **Test Statistic**: KS statistic for the group of n_steps for rows with missing ratings and group of n_steps for rows with non-missing ratings
 
 <iframe
   src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_dist_plot.html"
@@ -133,6 +132,36 @@ The graph above shows the distribution of n_steps for groups of missing and non-
   frameborder="0"
 ></iframe>
 The histogram above shows the distribution results of running the permutation 1000 times using the test statistic of KS stat
+
+The p_value we found is **(0.0)** and it is lower than the significance level. So we reject the null hypothesis. The missingness of “ratings” does depend on the ‘n_steps’ column
+
+#### Does the missingness of ‘ratings” depend on the “years_since_submission” column?
+We use TVD as the test statistic in this case since there are only 11 unique values in the “years_since_submission” column and they are ordinal. 
+#### **Null**: The missingness of ratings does not depend on the number of years since the recipe was submitted for a recipe
+
+#### **Alternative**: The missingness of ratings does depend on the the number of years since the recipe was submitted for a recipe
+
+#### **Test Statistic**: Total Variance Distance for the group of years since submission for rows with missing ratings and group of years since submission for rows with non-missing ratings
+
+<iframe
+  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/years_dist_plot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+The graph above shows the distribution of years since submission for groups of missing and non-missing ratings respectively
+
+<iframe
+  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/years_since_submission_tvd_plot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+The histogram above shows the distribution results of running the permutation 1000 times using the test statistic of TVD
+
+The p_value we found is **(0.0)** and it is lower than the significance level. So we reject the null hypothesis. The missingness of “ratings” does depend on the ‘years_since_submission’ column
+
+
 
 
 ## Hypothesis Testing
