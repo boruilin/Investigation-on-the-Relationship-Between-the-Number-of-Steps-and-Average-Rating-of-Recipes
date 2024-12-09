@@ -124,7 +124,6 @@ The graph below shows the distribution of n_steps for groups of missing and non-
   height="600"
   frameborder="0"
 ></iframe>
-
 The histogram below shows the distribution results of running the permutation 1000 times using the test statistic of KS stat
 <iframe
   src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_ks_plot.html"
@@ -132,7 +131,6 @@ The histogram below shows the distribution results of running the permutation 10
   height="600"
   frameborder="0"
 ></iframe>
-
 The p_value we found is **(0.0)** and it is lower than the significance level. So we reject the null hypothesis. The missingness of “ratings” does depend on the ‘n_steps’ column
 
 #### Does the missingness of ‘ratings” depend on the “years_since_submission” column?
