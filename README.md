@@ -117,22 +117,21 @@ We decided to use KS stats as test statistics here, since n_steps is a numeric v
 
 #### **Test Statistic**: KS statistic for the group of n_steps for rows with missing ratings and group of n_steps for rows with non-missing ratings
 
+The graph below shows the distribution of n_steps for groups of missing and non-missing ratings respectively
 <iframe
   src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_dist_plot.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
-The graph above shows the distribution of n_steps for groups of missing and non-missing ratings respectively
 
+The histogram below shows the distribution results of running the permutation 1000 times using the test statistic of KS stat
 <iframe
   src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_ks_plot.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
-
-The histogram above shows the distribution results of running the permutation 1000 times using the test statistic of KS stat
 
 The p_value we found is **(0.0)** and it is lower than the significance level. So we reject the null hypothesis. The missingness of “ratings” does depend on the ‘n_steps’ column
 
@@ -144,6 +143,7 @@ We use TVD as the test statistic in this case since there are only 11 unique val
 
 #### **Test Statistic**: Total Variance Distance for the group of years since submission for rows with missing ratings and group of years since submission for rows with non-missing ratings
 
+The graph below shows the distribution of years since submission for groups of missing and non-missing ratings respectively
 <iframe
   src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/years_dist_plot.html"
   width="800"
@@ -151,7 +151,7 @@ We use TVD as the test statistic in this case since there are only 11 unique val
   frameborder="0"
 ></iframe>
 
-The graph above shows the distribution of years since submission for groups of missing and non-missing ratings respectively
+The histogram below shows the distribution results of running the permutation 1000 times using the test statistic of TVD
 
 <iframe
   src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/years_since_submission_tvd_plot.html"
@@ -160,16 +160,33 @@ The graph above shows the distribution of years since submission for groups of m
   frameborder="0"
 ></iframe>
 
-The histogram above shows the distribution results of running the permutation 1000 times using the test statistic of TVD
-
-
 The p_value we found is **(0.0)** and it is lower than the significance level. So we reject the null hypothesis. The missingness of “ratings” does depend on the ‘years_since_submission’ column
 
 
 
-
 ## Hypothesis Testing
+In the previous section, we conducted a permutation test and found evidence suggesting that the missingness of 'ratings' is dependent on the number of steps in a recipe. To further investigate the relationship between recipe ratings and the number of steps, we conducted an additional hypothesis test. Specifically, we divided the data based on the median number of steps **(9)**, categorizing recipes with more than 9 steps as "high_steps" and those with 9 or fewer steps as "low_steps." The goal of this analysis was to determine whether there is a relationship between the average rating of a recipe and its assigned step category. For this test, we used a significance level of 0.05 and performed 1,000 permutations to simulate the null distribution of the test statistic.
+Hypotheses
 
+### **Null**: The average ratings for "high_steps" recipes and "low_steps" recipes are equal (μhigh_steps=μlow_stepsμhigh_steps​=μlow_steps​).
+
+### **Alternative**: The average ratings for "high_steps" recipes and "low_steps" recipes are not equal (μhigh_steps≠μlow_stepsμhigh_steps​=μlow_steps​).
+
+### **Test Statistic**: We used the difference in mean ratings  as the test statistic.
+
+To provide additional context for our null and alternative hypotheses, we considered that both "high_steps" and "low_steps" recipes might offer distinct advantages that could influence their ratings. "High_steps" recipes may receive higher ratings because the increased number of steps could result in more refined and complex flavors. Conversely, "low_steps" recipes might be rated highly due to their simplicity and convenience, which could appeal to users who prioritize ease of preparation. This reasoning motivated us to explore how these potential advantages align with the preferences of users reflected in our collected data.
+
+### Results and Conclusion
+The observed difference in mean ratings was **−0.0052**, and the resulting p-value was **0.007**, which is lower than the significance level of 0.05. Since the p-value is small, we reject the null hypothesis and conclude that the average ratings for "high_steps" recipes and "low_steps" recipes are not equal. This result suggests that the step categories do influence the average ratings of recipes in our dataset.
+
+The histogram belows shows the distribution of difference in means of ratings for high steps recipes and low steps recipes
+
+<iframe
+  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_steps_diff_means_plot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ## Framing a Prediction Problem
 
