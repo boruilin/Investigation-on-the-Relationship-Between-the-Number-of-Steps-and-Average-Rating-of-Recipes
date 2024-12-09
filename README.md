@@ -103,6 +103,7 @@ The first dataset, recipe, contains 83782 rows, representing 83872 unique recipe
 
 
 ### Univariate Analysis
+For our univariate analysis, we decided to look at the distribution of our main variable of interest, ‘n_steps’. The histogram below shows the distribution of the number of steps for all the recipes within our data. We can see that the distribution is right-skewed, and most recipes have less than 20 steps. However, there are a few outliers present and we need to consider them in our further analysis
 <iframe
   src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_hist.html"
   width="800"
@@ -110,8 +111,16 @@ The first dataset, recipe, contains 83782 rows, representing 83872 unique recipe
   frameborder="0"
 ></iframe>
 
-
 ### Bivariate Analysis
+For our bivariate analysis, we decided to use a scatter plot to examine the relationship between the distribution of n_steps and average ratings. The scatter plot below shows that recipes with fewer than 20 steps are densely distributed, with ratings spanning the entire range but concentrated near higher values (4–5)
+<iframe
+  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_rating_scatter.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+### Interesting Aggregates
 
 
 ## Assessment of Missingness
