@@ -103,12 +103,27 @@ The first dataset, recipe, contains 83782 rows, representing 83872 unique recipe
 
 
 ## Assessment of Missingness
+Within our merged dataset containing both columns from recipe and interaction, there are 3 columns that contain fair amounts of missing values, they are “ratings”, “reviews”, and “description”. Some other columns such as “user_id” and “name” also contain a few missing values; however, for the purpose of assessing missing values, we will only consider and examine the columns that contain a reasonable amount when determining the missing machisms. 
+### NMAR Analysis
+First, we will try to determine which of the columns above most likely has a missing mechanism of NMAR, meaning that the missing values are not dependent on anything else but the column itself. After we conducted some logical thinking and empirical testing, we concluded that the “review” column can both be NMAR. “review” is most likely NMAR because many users may avoid writing text reviews due to the effort involved, especially if they have a neutral feeling towards the results. To provide a similar example, when I have a very pleasant experience at a restaurant, I would usually write great reviews and give them a high star rating, but when I only have an average experience, I would not bother to write anything to provide my judgments on rating platforms. Some additional data that we can collect in order to make “review” MAR could be the number of times each recipe is used, since the more often a recipe is used, the more likely that it will have more reviews. 
+### Missing Dependency
+The column we selected to assess missing dependencies is the ‘ratings’. Some of the columns we thought ‘ratings could be MAR on are ‘n_steps”, “years_since_submission”, and “minutes”. Therefore, we decided to conduct some permutations using different test statistics for each case to determine their dependencies. In our analysis, we use the significance level of 0.05
+#### Does the missingness of ‘ratings” depend on the “n_steps” column?
+We decided to use KS stats as test statistics here, since n_steps is a numeric variable that contains a few outliers. Therefore, it is more appropriate to look at the difference in distributions rather than just the difference in means.
+
+Null: The missingness of ratings does not depend on the proportion of number of steps for a recipe
+Alternative: The missingness of ratings does depend on the proportion of number of steps for a recipe
+Test Statistic: KS statistic for the group of n_steps for rows with missing ratings and group of n_steps for rows with non-missing ratings
+
+The graph belows shows the distribution of n_steps for groups of missing and non-missing ratings respective
 <iframe
   src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/years_dist_plot.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+
+The histogram belows shows the result of running the permutation 1000 times using the test statistic of KS stat 
 
 
 
