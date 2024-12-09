@@ -111,27 +111,28 @@ The column we selected to assess missing dependencies is the ‘ratings’. Some
 #### Does the missingness of ‘ratings” depend on the “n_steps” column?
 We decided to use KS stats as test statistics here, since n_steps is a numeric variable that contains a few outliers. Therefore, it is more appropriate to look at the difference in distributions rather than just the difference in means.
 
-Null: The missingness of ratings does not depend on the proportion of number of steps for a recipe
+### **Null**:: The missingness of ratings does not depend on the proportion of number of steps for a recipe
 
-Alternative: The missingness of ratings does depend on the proportion of number of steps for a recipe
+### **Alternative**: The missingness of ratings does depend on the proportion of number of steps for a recipe
 
-Test Statistic: KS statistic for the group of n_steps for rows with missing ratings and group of n_steps for rows with non-missing ratings
+### **Test Statistic**: KS statistic for the group of n_steps for rows with missing ratings and group of n_steps for rows with non-missing ratings
 
-The graph belows shows the distribution of n_steps for groups of missing and non-missing ratings respective
+
 <iframe
   src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_dist_plot.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+The graph above shows the distribution of n_steps for groups of missing and non-missing ratings respectively
 
-The histogram belows shows the distribution results of running the permutation 1000 times using the test statistic of KS stat
 <iframe
-  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_ks_dist_plot.html"
+  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_ks_plot.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
+The histogram above shows the distribution results of running the permutation 1000 times using the test statistic of KS stat
 
 
 ## Hypothesis Testing
