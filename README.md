@@ -119,14 +119,19 @@ Test Statistic: KS statistic for the group of n_steps for rows with missing rati
 
 The graph belows shows the distribution of n_steps for groups of missing and non-missing ratings respective
 <iframe
-  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/years_dist_plot.html"
+  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_dist_plot.html"
   width="800"
   height="600"
   frameborder="0"
 ></iframe>
 
 The histogram belows shows the distribution results of running the permutation 1000 times using the test statistic of KS stat
-
+<iframe
+  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/n_step_ks_dist_plot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 ## Hypothesis Testing
