@@ -131,6 +131,7 @@ The graph above shows the distribution of n_steps for groups of missing and non-
   height="600"
   frameborder="0"
 ></iframe>
+
 The histogram above shows the distribution results of running the permutation 1000 times using the test statistic of KS stat
 
 The p_value we found is **(0.0)** and it is lower than the significance level. So we reject the null hypothesis. The missingness of “ratings” does depend on the ‘n_steps’ column
@@ -149,6 +150,7 @@ We use TVD as the test statistic in this case since there are only 11 unique val
   height="600"
   frameborder="0"
 ></iframe>
+
 The graph above shows the distribution of years since submission for groups of missing and non-missing ratings respectively
 
 <iframe
@@ -157,7 +159,9 @@ The graph above shows the distribution of years since submission for groups of m
   height="600"
   frameborder="0"
 ></iframe>
+
 The histogram above shows the distribution results of running the permutation 1000 times using the test statistic of TVD
+
 
 The p_value we found is **(0.0)** and it is lower than the significance level. So we reject the null hypothesis. The missingness of “ratings” does depend on the ‘years_since_submission’ column
 
