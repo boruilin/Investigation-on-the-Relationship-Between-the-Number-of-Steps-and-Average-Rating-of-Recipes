@@ -1,4 +1,4 @@
-# Investigation on the Relationship Between the-Number of Steps and Average Rating of Recipes
+# Investigation on the Relationship Between the Number of Steps and Average Rating of Recipes
 
 Authors: Borui Lin, Junshu Xin
 
@@ -112,7 +112,9 @@ The column we selected to assess missing dependencies is the ‘ratings’. Some
 We decided to use KS stats as test statistics here, since n_steps is a numeric variable that contains a few outliers. Therefore, it is more appropriate to look at the difference in distributions rather than just the difference in means.
 
 Null: The missingness of ratings does not depend on the proportion of number of steps for a recipe
+
 Alternative: The missingness of ratings does depend on the proportion of number of steps for a recipe
+
 Test Statistic: KS statistic for the group of n_steps for rows with missing ratings and group of n_steps for rows with non-missing ratings
 
 The graph belows shows the distribution of n_steps for groups of missing and non-missing ratings respective
@@ -123,8 +125,23 @@ The graph belows shows the distribution of n_steps for groups of missing and non
   frameborder="0"
 ></iframe>
 
-The histogram belows shows the result of running the permutation 1000 times using the test statistic of KS stat 
+The histogram belows shows the distribution results of running the permutation 1000 times using the test statistic of KS stat
 
 
+
+## Hypothesis Testing
+
+
+## Framing a Prediction Problem
+
+
+## Baseline Model
+
+
+
+## Final Model
+
+
+## Fairness Analysis
 
 
