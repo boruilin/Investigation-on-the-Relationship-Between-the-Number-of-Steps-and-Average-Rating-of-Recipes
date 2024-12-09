@@ -168,11 +168,11 @@ The p_value we found is **(0.0)** and it is lower than the significance level. S
 In the previous section, we conducted a permutation test and found evidence suggesting that the missingness of 'ratings' is dependent on the number of steps in a recipe. To further investigate the relationship between recipe ratings and the number of steps, we conducted an additional hypothesis test. Specifically, we divided the data based on the median number of steps **(9)**, categorizing recipes with more than 9 steps as "high_steps" and those with 9 or fewer steps as "low_steps." The goal of this analysis was to determine whether there is a relationship between the average rating of a recipe and its assigned step category. For this test, we used a significance level of 0.05 and performed 1,000 permutations to simulate the null distribution of the test statistic.
 Hypotheses
 
-### **Null**: The average ratings for "high_steps" recipes and "low_steps" recipes are equal (μhigh_steps=μlow_stepsμhigh_steps​=μlow_steps​).
+#### **Null**: The average ratings for "high_steps" recipes and "low_steps" recipes are equal.
 
-### **Alternative**: The average ratings for "high_steps" recipes and "low_steps" recipes are not equal (μhigh_steps≠μlow_stepsμhigh_steps​=μlow_steps​).
+#### **Alternative**: The average ratings for "high_steps" recipes and "low_steps" recipes are not equal.
 
-### **Test Statistic**: We used the difference in mean ratings  as the test statistic.
+#### **Test Statistic**: We used the difference in mean ratings  as the test statistic.
 
 To provide additional context for our null and alternative hypotheses, we considered that both "high_steps" and "low_steps" recipes might offer distinct advantages that could influence their ratings. "High_steps" recipes may receive higher ratings because the increased number of steps could result in more refined and complex flavors. Conversely, "low_steps" recipes might be rated highly due to their simplicity and convenience, which could appeal to users who prioritize ease of preparation. This reasoning motivated us to explore how these potential advantages align with the preferences of users reflected in our collected data.
 
