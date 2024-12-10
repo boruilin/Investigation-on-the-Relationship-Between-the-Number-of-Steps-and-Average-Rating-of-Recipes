@@ -91,11 +91,83 @@ The first dataset, recipe, contains 83782 rows, representing 83872 unique recipe
             </tr>
         </tbody>
     </table>
-
-
-
 </body>
 </html>
+The second dataset, interactions, contains 731927 rows and each row contains a review from the user on a specific recipe. The columns it includes are:
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+            border-bottom: 2px solid #ddd;
+        }
+        td {
+            border: 1px solid #ddd;
+        }
+        code {
+            background-color: #eaf4ff;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Column</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>user_id</code></td>
+                <td>User ID</td>
+            </tr>
+            <tr>
+                <td><code>recipe_id</code></td>
+                <td>Recipe ID</td>
+            </tr>
+            <tr>
+                <td><code>date</code></td>
+                <td>Date of interaction</td>
+            </tr>
+            <tr>
+                <td><code>rating</code></td>
+                <td>Rating given</td>
+            </tr>
+            <tr>
+                <td><code>review</code></td>
+                <td>Review text</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+Given these two datasets, we are able to begin our project. 
+
 
 ## Data Cleaning and Exploratory Data Analysis
 
