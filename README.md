@@ -193,7 +193,13 @@ For our bivariate analysis, we decided to use a scatter plot to examine the rela
 ></iframe>
 
 ### Interesting Aggregates
-
+|   rating |   minutes |
+|----------|-----------|
+|        1 |   99.6725 |
+|        2 |   98.0215 |
+|        3 |   87.4976 |
+|        4 |   91.585  |
+|        5 |  106.924  |
 
 ## Assessment of Missingness
 Within our merged dataset containing both columns from recipe and interaction, there are 3 columns that contain fair amounts of missing values, they are “ratings”, “reviews”, and “description”. Some other columns such as “user_id” and “name” also contain a few missing values; however, for the purpose of assessing missing values, we will only consider and examine the columns that contain a reasonable amount when determining the missing machisms. 
