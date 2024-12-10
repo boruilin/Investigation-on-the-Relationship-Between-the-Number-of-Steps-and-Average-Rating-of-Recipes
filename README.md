@@ -211,7 +211,10 @@ The histogram belows shows the distribution of difference in means of ratings fo
 
 
 ## Baseline Model
+Our baseline model is a multiclass classifier that uses the features n_steps, minutes, and years_since_submission to predict the average rating of a recipe (on a scale of 1 to 5). This model can help identify patterns in recipe characteristics that are most associated with high or low ratings, providing insights into recipe popularity and user preferences.
+The features are: 'n_steps' (quantitative), which represents the number of steps in a recipe; minutes (quantitative), indicating the time required to prepare the recipe; and years_since_submission (quantitative), which accounts for changes in rating trends over time. These features were chosen because they directly relate to recipe complexity, effort, and relevance over time.
 
+The target variable, average_rating, was converted into integer classes (1–5) to allow for classification. The baseline model achieved an F1 score (weighted) of 0.54 and an accuracy of 0.57 on the test set. This performance suggests that the baseline model provides a modest starting point for predicting recipe ratings but may require further refinement through feature engineering or hyperparameter tuning.
 
 
 ## Final Model
