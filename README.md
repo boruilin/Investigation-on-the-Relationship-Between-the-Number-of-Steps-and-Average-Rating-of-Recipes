@@ -194,7 +194,7 @@ For our bivariate analysis, we decided to use a scatter plot to examine the rela
 
 ### Interesting Aggregates
 |   rating |   minutes |
-|----------|-----------|
+|:----------|-----------:|
 |        1 |   99.6725 |
 |        2 |   98.0215 |
 |        3 |   87.4976 |
