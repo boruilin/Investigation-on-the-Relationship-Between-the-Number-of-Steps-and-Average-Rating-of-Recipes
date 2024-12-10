@@ -304,6 +304,11 @@ The histogram belows shows the distribution of difference in means of ratings fo
 ></iframe>
 
 ## Framing a Prediction Problem
+Our goal for this project is to predict the rating of a recipe which can be classified to a classification problem even though the ratings are in integer format. They are ordinal categorical variables actually. As our result, we round up the result to an integer so that it is within the range [1,2,3,4,5].  We will build a multi-class classification since there are 5 potential values as outcome.
+
+The reason why we choose to predict the rating of a recipe is because it is the only variable that represents people’s feeling toward it. Aside from rating, all other columns involve only the intrinsic characteristics of a recipe, while rating is truly important to us, and it is usually the first factor that we check. Rating will affect the popularity of the recipe significantly, so we are curious that out of so many factors, what variables have the most profound influence on rating. 
+
+The metric that we will be counting on is F-1 score. We discarded accuracy because we have a very imbalanced dataset, in which more than 72% of the ratings are 5 and more than 88% of the ratings are greater and equal to 4. 
 
 
 ## Baseline Model
