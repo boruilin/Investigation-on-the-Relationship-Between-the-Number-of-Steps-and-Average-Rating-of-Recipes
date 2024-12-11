@@ -496,5 +496,24 @@ The image belows show the F1 scores of each rating categories prediction
 ![Final Result](graphs/FinalModel.png)
 
 ## Fairness Analysis
+To assess the fairness of our model, we conducted an analysis by splitting the dataset into two groups based on the median value of the num_review column:
+**Group X**: Recipes with a low number of reviews (below the median value of num_review).
+**Group Y**: Recipes with a high number of reviews (at or above the median value of num_review).
+We used weighted precision as our evaluation metric. Precision was chosen because it measures the proportion of correctly predicted positive cases out of all positive predictions, allowing us to assess the fairness of the model’s performance across the two groups.
+**Null Hypothesis**: There is no difference in weighted precision between Group X and Group Y. Any observed difference is due to random chance.
+
+**Alternative Hypothesis**: There is a significant difference in weighted precision between Group X and Group Y.
+
+**Test Statistic**: Difference in weighted precision
+
+To evaluate the statistical significance of the observed difference, we performed a permutation test with 1,000 permutations. The observed difference in weighted precision between Group X and Group Y was approximately 0.016. The p-value, calculated as the proportion of permutations where the shuffled difference was greater than or equal to the observed difference, was found to be **0.0**.So we reject the null hypothesis, and we can conclude that our model is not fair it predicts better precision of one group than the other
+
+The histogram belows shows the distribution of difference in precision for Group X and Group Y
+<iframe
+  src="https://boruilin.github.io/Number-of-Step-and-Ratings-in-Recipe/graphs/fairness_plot.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
