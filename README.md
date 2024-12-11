@@ -335,7 +335,157 @@ Next, we calculated the number of calories from fat by multiplying the fat grams
 
 This data cleaning step standardizes the fat content of recipes, allowing us to make meaningful comparisons across recipes regardless of their total caloric values. All resulting values are between 0 and 1, facilitating parallel analysis of recipes with varying fat proportions.
 
+### Result
 
+Below are all the columns of the cleaned dataframe after feature engineering
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dataset Columns Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Dataset Columns Overview</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Column</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Existing Columns -->
+            <tr>
+                <td>name</td>
+                <td>Recipe name (object)</td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>Recipe ID (int64)</td>
+            </tr>
+            <tr>
+                <td>minutes</td>
+                <td>Minutes to prepare recipe (int64)</td>
+            </tr>
+            <tr>
+                <td>contributor_id</td>
+                <td>User ID who submitted the recipe (int64)</td>
+            </tr>
+            <tr>
+                <td>submitted</td>
+                <td>Date recipe was submitted (object)</td>
+            </tr>
+            <tr>
+                <td>tags</td>
+                <td>Food.com tags for recipe (object)</td>
+            </tr>
+            <tr>
+                <td>nutrition</td>
+                <td>Nutrition information [calories, fat, sugar, etc.] (object)</td>
+            </tr>
+            <tr>
+                <td>n_steps</td>
+                <td>Number of steps in recipe (int64)</td>
+            </tr>
+            <tr>
+                <td>steps</td>
+                <td>Text for recipe steps, in order (object)</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>Description of the recipe (object)</td>
+            </tr>
+            <tr>
+                <td>ingredients</td>
+                <td>Text for recipe ingredients (object)</td>
+            </tr>
+            <tr>
+                <td>n_ingredients</td>
+                <td>Number of ingredients in recipe (int64)</td>
+            </tr>
+            <tr>
+                <td>user_id</td>
+                <td>User ID (float64)</td>
+            </tr>
+            <tr>
+                <td>recipe_id</td>
+                <td>Recipe ID (float64)</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>Date of interaction (object)</td>
+            </tr>
+            <tr>
+                <td>rating</td>
+                <td>Rating given (float64)</td>
+            </tr>
+            <tr>
+                <td>review</td>
+                <td>Review text (object)</td>
+            </tr>
+            <!-- Newly Created Columns -->
+            <tr>
+                <td>average_ratings</td>
+                <td>Average rating per recipe (float64)</td>
+            </tr>
+            <tr>
+                <td>years_since_submission</td>
+                <td>Years since the recipe was submitted (int)</td>
+            </tr>
+            <tr>
+                <td>num_review</td>
+                <td>Number of reviews for each recipe (int)</td>
+            </tr>
+            <tr>
+                <td>num_tag</td>
+                <td>Number of tags associated with each recipe (int)</td>
+            </tr>
+            <tr>
+                <td>prop_fat</td>
+                <td>Proportion of fat calories relative to total calories (float64)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+Below are the first five rows of our dataset. We selected only a few columns for the purpose of display
+|   index | name                                 |   recipe_id |   minutes |   n_steps |   years_since_submission |   prop_fat |   num_tags |   num_review |   rating |   average_rating |
+|--------:|:-------------------------------------|------------:|----------:|----------:|-------------------------:|-----------:|-----------:|-------------:|---------:|-----------------:|
+|       0 | 1 brownies in the world    best ever |      333281 |        40 |        10 |                       16 |   0.442197 |         14 |            1 |        4 |                4 |
+|       1 | 1 in canada chocolate chip cookies   |      453467 |        45 |        12 |                       13 |   0.473063 |          9 |            1 |        5 |                5 |
+|       2 | 412 broccoli casserole               |      306168 |        40 |         6 |                       16 |   0.628337 |         10 |            4 |        5 |                5 |
+|       3 | 412 broccoli casserole               |      306168 |        40 |         6 |                       16 |   0.628337 |         10 |            4 |        5 |                5 |
+|       4 | 412 broccoli casserole               |      306168 |        40 |         6 |                       16 |   0.628337 |         10 |            4 |        5 |                5 |
 
 ### Univariate Analysis
 For our univariate analysis, we decided to look at the distribution of our main variable of interest, `n_steps`. The histogram below shows the distribution of the number of steps for all the recipes within our data. We can see that the distribution is right-skewed, and most recipes have less than 20 steps. However, there are a few outliers present and we need to consider them in our further analysis
