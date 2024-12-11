@@ -315,11 +315,22 @@ The metric that we will be counting on is F-1 score. We discarded accuracy becau
 Our baseline model is a multiclass classifier that uses the features `n_steps`, `minutes`, and `years_since_submission` to predict the average rating of a recipe (on a scale of 1 to 5). This model can help identify patterns in recipe characteristics that are most associated with high or low ratings, providing insights into recipe popularity and user preferences.
 The features are: `n_steps` (quantitative), which represents the number of steps in a recipe; `minutes` (quantitative), indicating the time required to prepare the recipe; and `years_since_submission` (quantitative), which accounts for changes in rating trends over time. These features were chosen because they directly relate to recipe complexity, effort, and relevance over time.
 
-The target variable, average_rating, was converted into integer classes (1–5) to allow for classification. The baseline model achieved an F1 score (weighted) of 0.54 and an accuracy of 0.57 on the test set. This performance suggests that the baseline model provides a modest starting point for predicting recipe ratings but may require further refinement through feature engineering or hyperparameter tuning.
+The target variable, average_rating, was converted into integer classes (1–5) to allow for classification. The baseline model achieved an F1 score (weighted) of 0.6751. However, the F1 score was only positive for the prediction rating of 5. This performance suggests that the baseline model provides a modest starting point for predicting recipe ratings but may require further refinement through feature engineering or hyperparameter tuning.
 
+The image belows show the F1 scores of each rating categories prediction
+<img src="Baseline Result" alt="Recipe Analysis Screenshot" width="800" height="600">
 
 ## Final Model
+In our final model, we made several adjustments to improve performance and address class imbalance. First, we added three new features: `num_tags`, `total_fat`, and `num_review`. These features were selected because we believed they would have meaningful relationships with recipe ratings. For example, num_tags provides insight into how descriptive the recipe is, while total_fat and num_review capture nutritional and popularity aspects that may influence user ratings.
 
+To handle multicollinearity in the dataset, we dropped the minutes column because it was strongly correlated with n_steps. Removing this feature ensured that the model focused on independent relationships between features and the target variable. Additionally, we eliminated outliers in the `n_steps` column by applying Z-score filtering, retaining only rows within a range of ±2.5 standard deviations. This step reduced noise in the data and helped the model generalize better.
+
+For the model itself, to address class imbalance in the target variable (rating), we applied SMOTE (Synthetic Minority Oversampling Technique) to oversample minority classes in the training data. This ensured that the model had sufficient representation from all rating categories. Furthermore, we tuned key hyperparameters, such as increasing the number of estimators to 300 and setting a maximum depth of 20. These adjustments improved the model's ability to capture complex patterns while preventing overfitting. The parameters for min_samples_split and min_samples_leaf were kept at 2 and 1, respectively, to maintain flexibility in splitting nodes and modeling finer distinctions in the data.
+
+The final model achieved an F1 score of 0.6839 which is a around 1 percent improvement from the previous model. Although this improvement might not seem very significant, we were able to adjust our model so it made improvements in F1 scores for the categories of 1-4.  These results demonstrate improvements in balancing precision and recall across all rating categories, reflecting the effectiveness of our feature engineering, outlier removal, and hyperparameter tuning. While there is room for further improvement, our adjustments have resulted in a robust and interpretable model for predicting recipe ratings.
+
+The image belows show the F1 scores of each rating categories prediction
+<img src="Final Result" alt="Recipe Analysis Screenshot" width="800" height="600">
 
 ## Fairness Analysis
 
