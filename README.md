@@ -174,7 +174,7 @@ Given these two datasets, we are able to begin our project.
 ### Data Cleaning
 To make future operations easier, we cleaned out datasets through following steps:
 
-1. Left merge the recipes and interactions datasets on id and recipe_id.
+1. Left merge the recipes and interactions datasets on `id` and `recipe_id`.
 The merge matches each unique recipe with their rating and review
 
 2. Check data types of all the columns after merging.
@@ -293,6 +293,27 @@ This step make sure that all variables are in desired data types and if not, we 
     </table>
 </body>
 </html>
+3.  Replace all 0 in the `rating` column to np.nan
+Rating score ranges from 1 to 5. The lowest possible rating is 1, so if there is an 0, that means no review was ever made for the recipe. It is important to specify this because it will affect the result significantly and will make our model biased.
+
+4. Add a column called `average_rating` to capture the average rating per recipe.
+Since each recipe can have multiple ratings from different users, calculating the average rating provides a more comprehensive view of the overall quality and reception of a given recipe.
+
+5.  Add a new column called `years_since_submission` that extract the number of years the data each recipe released until current.
+The `submitted` column, which originally stores submission dates as strings, was converted into a proper datetime format to enable time-based calculations. From this, we created a new column, `years_since_submission`, which calculates the number of years since each recipe was originally submitted. This was done by subtracting the submission date from the current date and converting the result into years.
+The primary motivation for creating this column is that more recent reviews tend to be stricter or more critical, potentially due to evolving user expectations or higher standards for recipes. We hypothesize that the time since submission could play an important role in predicting recipe ratings. For example, older recipes may have consistently high ratings due to their established popularity, while newer recipes might face stricter scrutiny. Including `years_since_submission` as a feature allows us to capture this temporal factor and evaluate its contribution to the prediction model.
+
+6. ​​Adding `num_review` Column
+We added a new column, `num_review`, to represent the popularity of each recipe. The values for this column were derived by grouping the data by recipe_id and then counting the number of reviews in the review column.
+The use of `recipe_id` instead of recipe name ensures accuracy because some recipes may share the same name but have distinct `recipe_ids`. This column provides an important measure of user engagement with each recipe, which can contribute to understanding and predicting recipe ratings.
+
+7. Adding `num_tag` and `prop_fat` Columns
+`num_tag`:
+The num_tag column was added to count the number of tags associated with each recipe. The original tags column was stored as a string object, which made it difficult to analyze. By converting it back into a list of strings and counting the number of elements in the list, we gained a measure of the breadth of categorization for each recipe. This provides insight into how versatile or diverse a recipe may be based on its tags.
+`prop_fat`:
+prop_fat is the proportion of fat calories relative to the total calories in a recipe. To calculate this, we used the fat (PDV) value in the nutrition column, dividing it by 100% to convert it into decimal form. Then, we multiplied it by 68 to convert the values to grams of fat, as 68 grams is the 100% daily value (PDV) for fat. The value of 68 grams was obtained from looking at nutrient information of different recipes on food.com and use the gram it has divided by the %dv it has. 
+Next, we calculated the number of calories from fat by multiplying the fat grams by 9 since each gram of fat contains 9 calories. Finally, we divided the fat calories by the total calories in the recipe (value at index 0 in the nutrition column) to get the proportion of fat calories relative to the total calories.
+This data cleaning step standardizes the fat content of recipes, allowing us to make meaningful comparisons across recipes regardless of their total caloric values. All resulting values are between 0 and 1, facilitating parallel analysis of recipes with varying fat proportions.
 
 
 
