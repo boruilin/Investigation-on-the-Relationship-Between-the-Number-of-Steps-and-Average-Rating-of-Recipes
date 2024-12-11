@@ -318,7 +318,7 @@ The features are: `n_steps` (quantitative), which represents the number of steps
 The target variable, average_rating, was converted into integer classes (1–5) to allow for classification. The baseline model achieved an F1 score (weighted) of 0.6751. However, the F1 score was only positive for the prediction rating of 5. This performance suggests that the baseline model provides a modest starting point for predicting recipe ratings but may require further refinement through feature engineering or hyperparameter tuning.
 
 The image belows show the F1 scores of each rating categories prediction
-<img src="Baseline Result" alt="Recipe Analysis Screenshot" width="800" height="600">
+![Baseline Result](graphs/Baseline%20result.png)
 
 ## Final Model
 In our final model, we made several adjustments to improve performance and address class imbalance. First, we added three new features: `num_tags`, `total_fat`, and `num_review`. These features were selected because we believed they would have meaningful relationships with recipe ratings. For example, num_tags provides insight into how descriptive the recipe is, while total_fat and num_review capture nutritional and popularity aspects that may influence user ratings.
@@ -330,7 +330,7 @@ For the model itself, to address class imbalance in the target variable (rating)
 The final model achieved an F1 score of 0.6839 which is a around 1 percent improvement from the previous model. Although this improvement might not seem very significant, we were able to adjust our model so it made improvements in F1 scores for the categories of 1-4.  These results demonstrate improvements in balancing precision and recall across all rating categories, reflecting the effectiveness of our feature engineering, outlier removal, and hyperparameter tuning. While there is room for further improvement, our adjustments have resulted in a robust and interpretable model for predicting recipe ratings.
 
 The image belows show the F1 scores of each rating categories prediction
-<img src="Final Result" alt="Recipe Analysis Screenshot" width="800" height="600">
+![Final Result](graphs/Final%20Result.png)
 
 ## Fairness Analysis
 
