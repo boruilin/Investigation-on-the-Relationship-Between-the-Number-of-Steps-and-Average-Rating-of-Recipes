@@ -478,13 +478,66 @@ Below are all the columns of the cleaned dataframe after feature engineering
 </html>
 
 Below are the first five rows of our dataset. We selected only a few columns for the purpose of display
-|   index | name                                 |   recipe_id |   minutes |   n_steps |   years_since_submission |   prop_fat |   num_tags |   num_review |   rating |   average_rating |
-|--------:|:-------------------------------------|------------:|----------:|----------:|-------------------------:|-----------:|-----------:|-------------:|---------:|-----------------:|
-|       0 | 1 brownies in the world    best ever |      333281 |        40 |        10 |                       16 |   0.442197 |         14 |            1 |        4 |                4 |
-|       1 | 1 in canada chocolate chip cookies   |      453467 |        45 |        12 |                       13 |   0.473063 |          9 |            1 |        5 |                5 |
-|       2 | 412 broccoli casserole               |      306168 |        40 |         6 |                       16 |   0.628337 |         10 |            4 |        5 |                5 |
-|       3 | 412 broccoli casserole               |      306168 |        40 |         6 |                       16 |   0.628337 |         10 |            4 |        5 |                5 |
-|       4 | 412 broccoli casserole               |      306168 |        40 |         6 |                       16 |   0.628337 |         10 |            4 |        5 |                5 |
+
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Recipe ID</th>
+            <th>Minutes</th>
+            <th>N_Steps</th>
+            <th>Years Since Submission</th>
+            <th>Prop Fat</th>
+            <th>Num Tags</th>
+            <th>Num Review</th>
+            <th>Rating</th>
+            <th>Average Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>brownies in the world best ever</td>
+            <td>333281</td>
+            <td>40</td>
+            <td>10</td>
+            <td>16</td>
+            <td>0.442197</td>
+            <td>14</td>
+            <td>1</td>
+            <td>4</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>in canada chocolate chip cookies</td>
+            <td>453467</td>
+            <td>45</td>
+            <td>12</td>
+            <td>13</td>
+            <td>0.473063</td>
+            <td>9</td>
+            <td>1</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>broccoli casserole</td>
+            <td>306168</td>
+            <td>40</td>
+            <td>6</td>
+            <td>16</td>
+            <td>0.628337</td>
+            <td>10</td>
+            <td>4</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+    </tbody>
+</table>
+
 
 
 ### Univariate Analysis
