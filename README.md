@@ -104,31 +104,47 @@ The second dataset, interactions, contains 731927 rows and each row contains a r
             font-family: Arial, sans-serif;
             margin: 20px;
             background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #444;
         }
         table {
-            width: 50%;
-            margin: 20px auto;
+            width: 80%; /* Set the width to fit the content */
+            margin: 20px auto; /* Center the table horizontally */
             border-collapse: collapse;
             font-size: 16px;
             border: 1px solid #ddd;
             box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         }
         th, td {
-            padding: 10px;
+            padding: 12px;
             text-align: left;
+            border: 1px solid #ddd;
         }
         th {
             background-color: #f4f4f4;
             border-bottom: 2px solid #ddd;
+            text-align: center;
         }
         td {
-            border: 1px solid #ddd;
+            background-color: #fff;
+        }
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
         }
         code {
             background-color: #eaf4ff;
             padding: 2px 4px;
             border-radius: 4px;
             font-family: "Courier New", Courier, monospace;
+        }
+        @media (max-width: 768px) {
+            table {
+                width: 100%; /* Adjust table width for small screens */
+                font-size: 14px;
+            }
         }
     </style>
 </head>
