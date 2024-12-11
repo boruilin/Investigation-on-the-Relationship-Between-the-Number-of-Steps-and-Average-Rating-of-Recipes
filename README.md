@@ -174,10 +174,10 @@ Given these two datasets, we are able to begin our project.
 ### Data Cleaning
 To make future operations easier, we cleaned out datasets through following steps:
 
-Left merge the recipes and interactions datasets on id and recipe_id.
+1. Left merge the recipes and interactions datasets on id and recipe_id.
 The merge matches each unique recipe with their rating and review
 
-Check data types of all the columns after merging.
+2. Check data types of all the columns after merging.
 This step make sure that all variables are in desired data types and if not, we need convert data type to what we want.
 
 <html lang="en">
