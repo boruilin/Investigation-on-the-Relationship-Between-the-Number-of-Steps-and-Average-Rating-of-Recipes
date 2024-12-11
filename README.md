@@ -478,7 +478,6 @@ Below are all the columns of the cleaned dataframe after feature engineering
 </html>
 
 Below are the first five rows of our dataset. We selected only a few columns for the purpose of display
-
 <table>
     <thead>
         <tr>
@@ -535,10 +534,34 @@ Below are the first five rows of our dataset. We selected only a few columns for
             <td>5</td>
             <td>5</td>
         </tr>
+        <tr>
+            <td>4</td>
+            <td>broccoli casserole</td>
+            <td>306168</td>
+            <td>40</td>
+            <td>6</td>
+            <td>16</td>
+            <td>0.628337</td>
+            <td>10</td>
+            <td>4</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>broccoli casserole</td>
+            <td>306168</td>
+            <td>40</td>
+            <td>6</td>
+            <td>16</td>
+            <td>0.628337</td>
+            <td>10</td>
+            <td>4</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
     </tbody>
 </table>
-
-
 
 ### Univariate Analysis
 For our univariate analysis, we decided to look at the distribution of our main variable of interest, `n_steps`. The histogram below shows the distribution of the number of steps for all the recipes within our data. We can see that the distribution is right-skewed, and most recipes have less than 20 steps. However, there are a few outliers present and we need to consider them in our further analysis
