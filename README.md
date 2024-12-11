@@ -293,6 +293,7 @@ This step make sure that all variables are in desired data types and if not, we 
     </table>
 </body>
 </html>
+
 3.  Replace all 0 in the `rating` column to np.nan
 Rating score ranges from 1 to 5. The lowest possible rating is 1, so if there is an 0, that means no review was ever made for the recipe. It is important to specify this because it will affect the result significantly and will make our model biased.
 
@@ -467,7 +468,7 @@ The image belows show the F1 scores of each rating categories prediction
 ![Baseline Result](graphs/Baseline%20result.png)
 
 ## Final Model
-In our final model, we made several adjustments to improve performance and address class imbalance. First, we added three new features: `num_tags`, `total_fat`, and `num_review`. These features were selected because we believed they would have meaningful relationships with recipe ratings. For example, num_tags provides insight into how descriptive the recipe is, while total_fat and num_review capture nutritional and popularity aspects that may influence user ratings.
+In our final model, we made several adjustments to improve performance and address class imbalance. First, we added three new features: `num_tags`, `prop_fat`, and `num_review`. These features were selected because we believed they would have meaningful relationships with recipe ratings. For example, num_tags provides insight into how descriptive the recipe is, while total_fat and num_review capture nutritional and popularity aspects that may influence user ratings.
 
 To handle multicollinearity in the dataset, we dropped the minutes column because it was strongly correlated with n_steps. Removing this feature ensured that the model focused on independent relationships between features and the target variable. Additionally, we eliminated outliers in the `n_steps` column by applying Z-score filtering, retaining only rows within a range of ±2.5 standard deviations. This step reduced noise in the data and helped the model generalize better.
 
