@@ -493,7 +493,7 @@ For the model itself, to address class imbalance in the target variable (rating)
 The final model achieved an F1 score of 0.6892 which is a around 1.4 percent improvement from the previous model. Although this improvement might not seem very significant, we were able to adjust our model so it made improvements in F1 scores for the categories of 1-4.  These results demonstrate improvements in balancing precision and recall across all rating categories, reflecting the effectiveness of our feature engineering, outlier removal, and hyperparameter tuning. While there is room for further improvement, our adjustments have resulted in a robust and interpretable model for predicting recipe ratings.
 
 The image belows show the F1 scores of each rating categories prediction
-![Final Result](graphs/FinalModel.png)
+![FinalModel](graphs/FinalModel.png)
 
 ## Fairness Analysis
 To assess the fairness of our model, we conducted an analysis by splitting the dataset into two groups based on the median value of the num_review column:
