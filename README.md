@@ -179,12 +179,11 @@ The merge matches each unique recipe with their rating and review
 
 Check data types of all the columns after merging.
 This step make sure that all variables are in desired data types and if not, we need convert data type to what we want.
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Type Chart</title>
     <style>
         body {
             font-family: Arial, sans-serif;
