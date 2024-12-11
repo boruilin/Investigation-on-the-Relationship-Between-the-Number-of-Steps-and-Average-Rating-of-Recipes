@@ -172,6 +172,130 @@ Given these two datasets, we are able to begin our project.
 ## Data Cleaning and Exploratory Data Analysis
 
 ### Data Cleaning
+To make future operations easier, we cleaned out datasets through following steps:
+
+Left merge the recipes and interactions datasets on id and recipe_id.
+The merge matches each unique recipe with their rating and review
+
+Check data types of all the columns after merging.
+This step make sure that all variables are in desired data types and if not, we need convert data type to what we want.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Type Chart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Data Type Chart</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Column</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>name</td>
+                <td>object</td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>int64</td>
+            </tr>
+            <tr>
+                <td>minutes</td>
+                <td>int64</td>
+            </tr>
+            <tr>
+                <td>contributor_id</td>
+                <td>int64</td>
+            </tr>
+            <tr>
+                <td>submitted</td>
+                <td>object</td>
+            </tr>
+            <tr>
+                <td>tags</td>
+                <td>object</td>
+            </tr>
+            <tr>
+                <td>nutrition</td>
+                <td>object</td>
+            </tr>
+            <tr>
+                <td>n_steps</td>
+                <td>int64</td>
+            </tr>
+            <tr>
+                <td>steps</td>
+                <td>object</td>
+            </tr>
+            <tr>
+                <td>description</td>
+                <td>object</td>
+            </tr>
+            <tr>
+                <td>ingredients</td>
+                <td>object</td>
+            </tr>
+            <tr>
+                <td>n_ingredients</td>
+                <td>int64</td>
+            </tr>
+            <tr>
+                <td>user_id</td>
+                <td>float64</td>
+            </tr>
+            <tr>
+                <td>recipe_id</td>
+                <td>float64</td>
+            </tr>
+            <tr>
+                <td>date</td>
+                <td>object</td>
+            </tr>
+            <tr>
+                <td>rating</td>
+                <td>float64</td>
+            </tr>
+            <tr>
+                <td>review</td>
+                <td>object</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
 
 
 ### Univariate Analysis
