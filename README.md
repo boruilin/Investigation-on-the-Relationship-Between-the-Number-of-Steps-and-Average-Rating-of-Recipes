@@ -213,7 +213,6 @@ This step make sure that all variables are in desired data types and if not, we 
     </style>
 </head>
 <body>
-    <h1 style="text-align: center;">Data Type Chart</h1>
     <table>
         <thead>
             <tr>
