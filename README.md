@@ -474,10 +474,10 @@ To handle multicollinearity in the dataset, we dropped the minutes column becaus
 
 For the model itself, to address class imbalance in the target variable (rating), we applied SMOTE (Synthetic Minority Oversampling Technique) to oversample minority classes in the training data. This ensured that the model had sufficient representation from all rating categories. Furthermore, we tuned key hyperparameters, such as increasing the number of estimators to 300 and setting a maximum depth of 20. These adjustments improved the model's ability to capture complex patterns while preventing overfitting. The parameters for min_samples_split and min_samples_leaf were kept at 2 and 1, respectively, to maintain flexibility in splitting nodes and modeling finer distinctions in the data.
 
-The final model achieved an F1 score of 0.6839 which is a around 1 percent improvement from the previous model. Although this improvement might not seem very significant, we were able to adjust our model so it made improvements in F1 scores for the categories of 1-4.  These results demonstrate improvements in balancing precision and recall across all rating categories, reflecting the effectiveness of our feature engineering, outlier removal, and hyperparameter tuning. While there is room for further improvement, our adjustments have resulted in a robust and interpretable model for predicting recipe ratings.
+The final model achieved an F1 score of 0.6892 which is a around 1.4 percent improvement from the previous model. Although this improvement might not seem very significant, we were able to adjust our model so it made improvements in F1 scores for the categories of 1-4.  These results demonstrate improvements in balancing precision and recall across all rating categories, reflecting the effectiveness of our feature engineering, outlier removal, and hyperparameter tuning. While there is room for further improvement, our adjustments have resulted in a robust and interpretable model for predicting recipe ratings.
 
 The image belows show the F1 scores of each rating categories prediction
-![Final Result](graphs/Final%20Result.png)
+![Final Result](graphs/FinalModel.png)
 
 ## Fairness Analysis
 
