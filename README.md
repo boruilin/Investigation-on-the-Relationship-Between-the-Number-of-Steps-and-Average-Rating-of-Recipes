@@ -308,11 +308,14 @@ We added a new column, `num_review`, to represent the popularity of each recipe.
 The use of `recipe_id` instead of recipe name ensures accuracy because some recipes may share the same name but have distinct `recipe_ids`. This column provides an important measure of user engagement with each recipe, which can contribute to understanding and predicting recipe ratings.
 
 7. Adding `num_tag` and `prop_fat` Columns
+
 `num_tag`:
 The num_tag column was added to count the number of tags associated with each recipe. The original tags column was stored as a string object, which made it difficult to analyze. By converting it back into a list of strings and counting the number of elements in the list, we gained a measure of the breadth of categorization for each recipe. This provides insight into how versatile or diverse a recipe may be based on its tags.
+
 `prop_fat`:
 prop_fat is the proportion of fat calories relative to the total calories in a recipe. To calculate this, we used the fat (PDV) value in the nutrition column, dividing it by 100% to convert it into decimal form. Then, we multiplied it by 68 to convert the values to grams of fat, as 68 grams is the 100% daily value (PDV) for fat. The value of 68 grams was obtained from looking at nutrient information of different recipes on food.com and use the gram it has divided by the %dv it has. 
 Next, we calculated the number of calories from fat by multiplying the fat grams by 9 since each gram of fat contains 9 calories. Finally, we divided the fat calories by the total calories in the recipe (value at index 0 in the nutrition column) to get the proportion of fat calories relative to the total calories.
+
 This data cleaning step standardizes the fat content of recipes, allowing us to make meaningful comparisons across recipes regardless of their total caloric values. All resulting values are between 0 and 1, facilitating parallel analysis of recipes with varying fat proportions.
 
 
